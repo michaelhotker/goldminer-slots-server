@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gold Miner Slots Admin</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <h1>Gold Miner Slots Admin</h1>
+        <a href="/">Kiosk</a>
+      </header>
+
+      <section class="content admin-layout">
+        <section class="cards">
+          <div class="panel stat"><span>Players</span><strong id="playerCount">0</strong></div>
+          <div class="panel stat"><span>Total credits</span><strong id="creditTotal">0</strong></div>
+          <div class="panel stat"><span>Linked cards</span><strong id="rfidCount">0</strong></div>
+        </section>
+
+        <section class="panel">
+          <h2>Players</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Barcode</th>
+                <th>RFID</th>
+                <th>Credits</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="playersBody"></tbody>
+          </table>
+        </section>
+
+        <section class="panel">
+          <h2>History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Player</th>
+                <th>Action</th>
+                <th>Amount</th>
+                <th>Balance</th>
+                <th>Source</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+    <script src="/static/admin.js"></script>
+  </body>
+</html>

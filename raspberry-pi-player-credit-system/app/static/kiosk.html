@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gold Miner Slots Kiosk</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <h1>Gold Miner Slots Kiosk</h1>
+        <a href="/admin">Admin</a>
+      </header>
+
+      <section class="content kiosk-grid">
+        <form class="panel" id="barcodeForm">
+          <h2>Scan Barcode</h2>
+          <label for="barcodeInput">Barcode</label>
+          <div class="field-row">
+            <input id="barcodeInput" autocomplete="off" autofocus placeholder="Scan or type barcode" />
+            <button type="submit">Enter</button>
+          </div>
+          <label for="playerNameInput" style="margin-top: 14px">Player name</label>
+          <input id="playerNameInput" autocomplete="off" placeholder="Optional" />
+          <div class="status" id="scanStatus">Ready for scanner input.</div>
+        </form>
+
+        <section class="panel" aria-live="polite">
+          <h2>Current Player</h2>
+          <div id="playerSummary" class="player-summary">No player loaded.</div>
+          <div class="button-row">
+            <button data-credit="10" type="button">Add 10</button>
+            <button data-credit="20" type="button">Add 20</button>
+            <button data-credit="50" type="button">Add 50</button>
+            <button id="pairButton" class="secondary" type="button">New RFID Pairing Code</button>
+          </div>
+          <div class="status" id="creditStatus"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Pair RFID Card</h2>
+          <p id="pairingText">Load a player, then generate a code. Enter that code on the slot machine before tapping the card.</p>
+          <div id="pairingCode" class="pairing-code" hidden></div>
+          <div class="status" id="pairStatus"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Recent History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Action</th>
+                <th>Change</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/kiosk.js"></script>
+  </body>
+</html>
